@@ -94,10 +94,10 @@ public class MainActivity extends Activity implements OnClickListener {
 	//设置相关参数
 	private void setLocationOption(){
 		LocationClientOption option = new LocationClientOption();
-		option.setOpenGps(true);				//打开gps
-		option.setCoorType("bd09ll");		//设置坐标类型
-		option.setScanSpan(10000);	//设置定位模式，小于1秒则一次定位;大于等于1秒则定时定位
-		option.setAddrType("all");		//设置地址信息，仅设置为“all”时有地址信息，默认无地址信息
+		option.setOpenGps(true);	//打开gps
+		option.setCoorType("bd09ll");	//设置坐标类型
+		option.setScanSpan(10000);      //设置定位模式，小于1秒则一次定位;大于等于1秒则定时定位
+		option.setAddrType("all");	//设置地址信息，仅设置为“all”时有地址信息，默认无地址信息
 		mLocClient.setLocOption(option);
 	}
 
@@ -108,20 +108,15 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void onClick(View v){
     	switch (v.getId()) {
 		case R.id.button1:
-			
 			break;
-			
 		case R.id.button2:
-			
 			intent = new Intent(this,SportDetailNumActivity.class);
 			startActivity(intent);
 			break;
-
 		case R.id.button3:
 			intent = new Intent(this,SportMapActivity.class);
 			startActivity(intent);
 			break;
-			
 		case R.id.bt_start:
 			if (weight<=10) {
 				Toast.makeText(getApplicationContext(), "输先输入体重以便准确测量！", Toast.LENGTH_SHORT).show();
@@ -136,7 +131,6 @@ public class MainActivity extends Activity implements OnClickListener {
 				}
 			}
 			break;
-			
 		case R.id.bt_stop:
 			if (SportAmountService.isStart) {
 				intent = new Intent(this, SportAmountService.class);//关闭服务
@@ -148,8 +142,6 @@ public class MainActivity extends Activity implements OnClickListener {
 			}
 			
 			break;
-			
-
 		case R.id.bt_set_weight:
 			showDialog(DIALOG_SET_WEIGHT);
 			break;
